@@ -1,7 +1,9 @@
 # PizzeriaApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0. This is a MEAN Application (Created using MongoDB, Express, Angular and NodeJS).
+
 Front End
+
 The application has 5 pages, 
 1)	The Home Page
 2)	Order Pizza Page
