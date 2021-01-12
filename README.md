@@ -15,27 +15,46 @@ Once in the cart, the total bill is displayed. The entire cart can be cleared or
 Backend
 The Endpoints are:
 Get Requests
+
 •	/getallpizzas
+
 •	/getpizzabyid/:id
+
 •	/getpizzasincart/:user
+
 •	/getalltoppings
+
 •	/gettoppingbyid/:id
+
 •	/gettoppingsincart/:user
+
 •	/getpizzabyname
+
 •	/gettoppingbyname
+
 •	/getaccountwithloginid/:loginId
 
+
 Post Requests
+
 •	/addpizzatocart
+
 •	/addtoppingstocart
+
 •	/signup
 
+
 Put Requests
+
 •	/updatepizzaqty
 
+
 Delete Requests
+
 •	/clearcart/:user
+
 •	/deletefromcart/:id
+
 
 
 ## Development server
