@@ -1,0 +1,78 @@
+<div class="container">
+	<h1>Sign Up Here..</h1> <br>
+	<form [formGroup]="registerForm" (ngSubmit)="signUp()">
+		<div class="row form-group">
+			<label class="col-5">Name: </label>
+			<input type="text" class="col-7 form-control"  placeholder="Name" formControlName="userName"/>
+		</div>
+		
+		<div class="row" *ngIf="registerForm.controls['userName'].hasError('required')">
+			<div class="col-5"> </div>
+			<div class="alert alert-danger" role="alert">
+				<strong>Name, </strong> is required.
+			</div>
+		</div>
+		
+		<div class="row form-group">
+			<label class="col-5">Age: </label>
+			<input type="number" class="col-7 form-control"  placeholder="Age" formControlName="userAge"/>
+		</div>
+		<div class="row" *ngIf="registerForm.controls['userAge'].hasError('required')">
+			<div class="col-5"> </div>
+			<div class="alert alert-danger" role="alert">
+				<strong>Age </strong> is required.
+			</div>
+		</div>
+		
+		<div class="row form-group">
+			<label class="col-5">Login ID: </label>
+			<input type="text" class="col-7 form-control"  placeholder="Login ID" formControlName="loginId"/>
+		</div>
+		<div class="row" *ngIf="registerForm.controls['loginId'].hasError('required')">
+			<div class="col-5"> </div>
+			<div class="alert alert-danger" role="alert">
+				<strong>LoginID </strong> is required.
+			</div>
+		</div>
+		
+		<div class="row form-group">
+			<label class="col-5">Email ID: </label>
+			<input type="email" class="col-7 form-control"  placeholder="Email ID" formControlName="email"/>
+		</div>
+		<div class="row" *ngIf="registerForm.controls['email'].hasError('required')">
+			<div class="col-5"> </div>
+			<div class="alert alert-danger" role="alert">
+				<strong>Email ID, </strong> is required.
+			</div>
+		</div>
+		
+		<div class="row form-group">
+			<label class="col-5">Password: </label>
+			<input type="password" class="col-7 form-control"  placeholder="Password" formControlName="password"/>
+		</div>
+		<div class="row" *ngIf="registerForm.controls['password'].hasError('required')">
+			<div class="col-5"> </div>
+			<div class="alert alert-danger" role="alert">
+				<strong>Password, </strong> is required.
+			</div>
+		</div>
+		
+		<div class="row form-group">
+			<label class="col-5">Type: </label>
+			<input type="text" class="col-7 form-control"  placeholder="Prime or Regular" formControlName="userType"/>
+		</div>
+		
+		<div class="row" *ngIf="registerForm.controls['userType'].hasError('required')">
+			<div class="col-5"> </div>
+			<div class="alert alert-danger" role="alert">
+				Please Mention prime or regular
+			</div>
+		</div>
+		
+		<br>
+		<div class="row">
+			<div class="col-5"></div>
+			<button type="submit" class="btn btn-primary" [disabled]=!registerForm.valid>Sign Up</button>
+		</div>
+	</form>
+</div>

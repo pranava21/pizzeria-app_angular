@@ -1,0 +1,13 @@
+img {
+    width: 70px;
+    height: auto;
+}
+
+button{
+    background-color: black;
+    color: goldenrod;
+}
+
+label{
+    color: gold;
+}

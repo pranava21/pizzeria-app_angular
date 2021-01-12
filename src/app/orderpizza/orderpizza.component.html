@@ -1,0 +1,64 @@
+<div class="container">
+	<div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
+		<div fxFlex="50%" *ngFor="let pizza of pizzaList">
+			<mat-card class="mat-elevation-z4">
+				<table>
+					<tr>
+						<td>
+							<div class="row">
+								<mat-card-title class="col-5">{{pizza.name}}</mat-card-title>
+							</div>
+							<br>
+							<mat-card-content>
+								<h4>&#x20B9; {{pizza.price}}</h4>
+							</mat-card-content>
+							
+							<mat-card-content *ngIf="pizza.type === 'veg'" class="center">
+								<img mat-card-image src="assets/veg.png" alt="" class="type">
+							</mat-card-content>
+							
+							<mat-card-content *ngIf="pizza.type ===  'nonveg'" class="center">
+								<img mat-card-image src="assets/nonveg.png" alt="" class="type">
+							</mat-card-content>
+						</td> &nbsp; &nbsp; &nbsp;
+						<td>
+							<div class="row" style="text-align: left;">
+								<p class="col-7 description" >{{pizza.description}}</p>
+							</div>
+							
+							<b>Ingredients</b>
+							<div class="row">
+								<p class="col-7 description">{{pizza.ingredients}}</p>
+							</div>
+							
+							<b>Toppings</b>
+							<div class="row">
+								<p class="col-7 description">{{pizza.topping}}</p>
+							</div>
+						</td>
+						<td>
+							<mat-card-content>
+								<img mat-card-image [src]="pizza.image" align="left"  alt=""> <br> <br>
+							</mat-card-content> <br>
+							
+							<mat-card-actions>
+								<button class="btn btn-warning" (click)="addToCart($event, pizza)">Add to cart</button>
+								<br> <br>
+								<mat-form-field>
+								<mat-label>Quantity (1)</mat-label>
+								<mat-select [(value)]="qty">
+									<mat-option value="1">1</mat-option>
+									<mat-option value="2">2</mat-option>
+									<mat-option value="3">3</mat-option>
+									<mat-option value="4">4</mat-option>
+									<mat-option value="5">5</mat-option>
+								</mat-select>
+								</mat-form-field>
+							</mat-card-actions>
+						</td>
+					</tr>
+				</table>
+			</mat-card>
+		</div>
+	</div>
+</div>

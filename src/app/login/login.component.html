@@ -1,0 +1,31 @@
+<div class="container">
+	<h1>Sign Up Here..</h1> <br>
+	<form [formGroup]="loginForm" (ngSubmit)="signIn()">
+		<div class="row form-group">
+			<label class="col-5">Login ID: </label>
+			<input type="text" class="col-7 form-control"  placeholder="Login ID" formControlName="loginId"/>
+		</div>
+		<div class="row" *ngIf="loginForm.controls['loginId'].hasError('required')">
+			<div class="col-5"> </div>
+			<div class="alert alert-danger" role="alert">
+				<strong>Login ID, </strong> is required.
+			</div>
+		</div>
+		
+		<div class="row form-group">
+			<label class="col-5">Password: </label>
+			<input type="password" class="col-7 form-control"  placeholder="Password" formControlName="password"/>
+		</div>
+		<div class="row" *ngIf="loginForm.controls['password'].hasError('required')">
+			<div class="col-5"> </div>
+			<div class="alert alert-danger" role="alert">
+				<strong>Password, </strong> is required.
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-5"></div>
+			<button type="submit" class="btn btn-primary" [disabled]=!loginForm.valid>Sign In</button>
+		</div>
+	</form>
+</div>
